@@ -1,0 +1,61 @@
+<templateSet group="useful">
+  <template name="block" value="&#10;//-----------------------------------------------------&#10;//       $TEXT$&#10;//-----------------------------------------------------&#10;" description="input comment to code block" toReformat="false" toShortenFQNames="true">
+    <variable name="TEXT" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="TypeScript" value="true" />
+    </context>
+  </template>
+  <template name="iife" value="(function $FN$IIFE() { //IIFE&#10;&#10;  $SELECTION$$END$&#10;}()); //IIFE&#10;" description="immidiately invoked function expression" toReformat="false" toShortenFQNames="true" deactivated="true">
+    <variable name="FN" expression="camelCase(fileNameWithoutExtension())" defaultValue="&quot;nameOfIIFE&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSX_HTML" value="false" />
+    </context>
+  </template>
+  <template name="e2e-helper-obj" value="'use strict';&#10;&#10;export const $HELPER_NAME$ = {&#10;  $END$&#10;};&#10;&#10;export default $HELPER_NAME$;&#10;" description="initial code for e2e hepler as object" toReformat="false" toShortenFQNames="true" deactivated="true">
+    <variable name="HELPER_NAME" expression="camelCase(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="e2e-helper" value="'use strict';&#10;&#10;export class $HELPER_CLASS$ {&#10;&#10;  constructor() {&#10;    $END$&#10;  }&#10;}&#10;&#10;/**&#10; * @type {$HELPER_CLASS$}&#10; */&#10;export const $HELPER_NAME$ = new $HELPER_CLASS$();&#10;&#10;export default $HELPER_NAME$;&#10;" description="initial code for e2e hepler as class" toReformat="true" toShortenFQNames="true" deactivated="true">
+    <variable name="HELPER_NAME" expression="camelCase(fileNameWithoutExtension())" defaultValue="" alwaysStopAt="true" />
+    <variable name="HELPER_CLASS" expression="capitalize(HELPER_NAME)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="imp" value="import {$elem$} from '$path$';" description="es6: import one element" toReformat="true" toShortenFQNames="true">
+    <variable name="path" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="elem" expression="complete()" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="req" value="const $NAME$ = require('$FILE$');$END$" description="requires to a variable" toReformat="false" toShortenFQNames="true">
+    <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="FILE" expression="" defaultValue="NAME" alwaysStopAt="true" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="rvoid" value="@return {void}" description="jsdoc for returns {void}" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+    </context>
+  </template>
+  <template name="clog" value="console.log($END$);" description="console.log" toReformat="true" toShortenFQNames="true">
+    <context>
+      <option name="JS_EXPRESSION" value="true" />
+      <option name="JS_STATEMENT" value="true" />
+    </context>
+  </template>
+  <template name="iife_auto" value="(function $FN$IIFE() { //IIFE&#10;&#10;  $SELECTION$$END$&#10;}()); //IIFE&#10;" description="immidiately invoked function expression" toReformat="false" toShortenFQNames="true">
+    <variable name="FN" expression="camelCase(fileNameWithoutExtension())" defaultValue="&quot;nameOfIIFE&quot;" alwaysStopAt="false" />
+    <context>
+      <option name="JAVA_SCRIPT" value="true" />
+      <option name="JSX_HTML" value="false" />
+    </context>
+  </template>
+</templateSet>
